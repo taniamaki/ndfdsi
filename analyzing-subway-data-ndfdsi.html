@@ -12369,7 +12369,7 @@ Para isso crie uma coluna chamada de EXITSn_hourly e insira a diferença entre a
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
@@ -12391,7 +12391,7 @@ Para isso crie uma coluna chamada de EXITSn_hourly e insira a diferença entre a
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">filter_by_regular</span><span class="p">(</span><span class="n">output_file</span><span class="p">)</span>
@@ -12408,7 +12408,7 @@ Para isso crie uma coluna chamada de EXITSn_hourly e insira a diferença entre a
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[34]:</div>
+<div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -12819,15 +12819,15 @@ Nós complementamos para você este arquivo com os dados de clima de Nova Iorque
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">num_rainy_days</span><span class="p">(</span><span class="n">turnstile_weather</span><span class="p">):</span>
     
     <span class="n">chuva</span> <span class="o">=</span> <span class="n">turnstile_weather</span><span class="p">[</span><span class="n">turnstile_weather</span><span class="p">[</span><span class="s1">&#39;rain&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1.0&#39;</span><span class="p">]</span>
     <span class="n">total</span> <span class="o">=</span> <span class="n">chuva</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DATEn&#39;</span><span class="p">])[</span><span class="s1">&#39;rain&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-    
-    <span class="k">return</span> <span class="n">total</span>
+   
+    <span class="k">return</span> <span class="n">total</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12837,7 +12837,7 @@ Nós complementamos para você este arquivo com os dados de clima de Nova Iorque
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_rainy_days</span><span class="p">(</span><span class="n">turnstile_weather</span><span class="p">)</span>
@@ -12853,24 +12853,13 @@ Nós complementamos para você este arquivo com os dados de clima de Nova Iorque
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[38]:</div>
+<div class="prompt output_prompt">Out[14]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>DATEn
-2011-05-04    4436
-2011-05-15    4333
-2011-05-16    4493
-2011-05-17    4412
-2011-05-18    4386
-2011-05-19    4503
-2011-05-20    4364
-2011-05-21    4348
-2011-05-23    4479
-2011-05-30    4350
-Name: rain, dtype: int64</pre>
+<pre>10</pre>
 </div>
 
 </div>
